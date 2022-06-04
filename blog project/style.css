@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Poppins:wght@300;800&display=swap");
+
+/* Base styling  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  background: url(images/bg.jpg);
+  background-size: cover;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #f9f9f9;
+}
+
+h1 {
+  color: #fffffc;
+  margin: 16px 0;
+  font-weight: 800;
+}
+
+h3 {
+  margin: 8px 0;
+  font-weight: 800;
+}
+p {
+  margin: 16px 0;
+  line-height: 1.75;
+  font-weight: 400;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 15px;
+}
+
+/* Navigation */
+header {
+  line-height: 100px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
+  color: grey;
+}
+
+nav ul li {
+  display: inline;
+  padding: 0 16px;
+}
+
+.mobile {
+  display: none;
+}
+
+/* js part */
+
+.show {
+  display: block;
+}
+
+@media (max-width: 750px) {
+  nav {
+    position: static;
+  }
+  nav ul {
+    display: none;
+    opacity: 90%;
+    width: 100%;
+    background-color: grey;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    height: 40vh;
+    text-align: center;
+  }
+
+  nav ul li {
+    display: block;
+  }
+
+  a.mobile {
+    color: #202020;
+    display: block;
+    font-size: 32px;
+  }
+}
+
+/* aside part */
+
+aside {
+  padding: 64px;
+}
+
+aside .Comments,
+.archives {
+  margin-top: 64px;
+}
+
+/* blog */
+.blog-post h1 {
+  color: #202020;
+}
+
+.blog-post a {
+  color: dodgerblue;
+}
+.blog-post {
+  padding: 32px;
+}
+
+.contaner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px auto 100px;
+  height: 100vh;
+  width: 95%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #383333;
+  grid-column: 1/4;
+  position: sticky;
+  z-index: 1;
+  top: 0px;
+}
+
+aside {
+  background-color: #313338;
+  grid-column: 1/2;
+  color: #f9f9f9;
+}
+
+main {
+  background-color: #fffffc;
+  grid-column: 2 /4;
+}
+
+footer {
+  background-color: #f9f9f9;
+  grid-column: 1/4;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .contaner {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px auto auto 100px;
+    width: 100%;
+  }
+
+  header,
+  main,
+  footer,
+  aside {
+    grid-column: 1;
+  }
+}
